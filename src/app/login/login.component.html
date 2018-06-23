@@ -1,0 +1,13 @@
+<div *ngIf="isLoginError">
+  <mat-icon>home</mat-icon>Incorrect username or password
+</div>
+<form #loginForm="ngForm" class="login-form" (ngSubmit)="OnSubmit(email.value, password.value)">
+  <mat-form-field class="input-full-width">
+      <input matInput #email ngModel type="email"  placeholder="Email" name="email" required>
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input matInput #password ngModel type="password" placeholder="Password" name="password" required>
+  </mat-form-field>
+  <button mat-raised-button type="submit" (click)="loginUser()" color="primary">Login</button>
+
+</form>
